@@ -11,6 +11,11 @@ models:
     columns:
       - name: product_id
         tests: [unique, not_null]
+      - name: category
+        tests:
+          - accepted_values:          # kategori di luar daftar ini = data salah
+              arguments:
+                values: ['Electronics', 'Furniture', 'Accessories']
 
   - name: dim_date
     columns:
